@@ -8,41 +8,37 @@
 import java.util.Scanner;
 
 public class MainConsole {
-    /*
-     * A csoni objektum osztáj tagjává kellen tenni.
-     * Meg fontolandü a egy try() utasításba zárása is,
-     * így le lesz zárva biztosan.
-     * Ezzel valamit kezdünk.
-     * Most jó lesz így.
-     */
-    String transport = "";
-    String name = "";
-    String quantity = "";    
+    String transportCost = "";
+    String buisnessCost = "";
+    String repairCost = "";
+    Scanner scanner;   
     public MainConsole() {
         putHeader();
+        scanner = new Scanner(System.in);
+        startInput();
+        writeData();        
      
-        
-        /* A bekérő: */
-        Scanner csoni = new Scanner(System.in);        
-
-System.out.println("──────────────────────────────────────────");
-System.out.print("Szállítási költség: ");
-transport = csoni.nextLine();
-
-System.out.println("──────────────────────────────────────────");
-System.out.print("Üzleti költség: ");
-name = csoni.nextLine();
-
-System.out.println("──────────────────────────────────────────");
- System.out.print("Javítási költség: ");
-  quantity = csoni.nextLine();        
-  Koltseg k = new Koltseg(transport, name, quantity);
-  Filehandler f = new Filehandler();
-  f.i(k);
     }
     public void putHeader(){
         System.out.println("╔═════════════════════════════════════════╗");
         System.out.printf("║%17s%25s\n", "Projekt költsége", "║");
         System.out.println("╚═════════════════════════════════════════╝");   
+    }
+    private void startInput() {
+        transportCost = input("Szállítási költség: ");
+        buisnessCost = input("Üzleti költség: ");
+        repairCost = input("Javítási költség: ");
+    }
+    private String input(String msg) {
+        System.out.println("──────────────────────────────────────────");
+        System.out.print(msg);
+        String indata = scanner.nextLine();
+        return indata;
+    }
+    private void writeData(){
+        Koltseg k = new Koltseg(transportCost, buisnessCost, repairCost);
+        Filehandler write = new Filehandler("adat.txt");
+        write.writeData(k);
+        write.closeFile();
     }
 }
