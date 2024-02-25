@@ -21,16 +21,15 @@ public class MainConsole {
 
 /* Most jön a nevecske */
 // A bekért név tárolása:
-String ez = "";
+    String ez = "";
 
     /* Most jön a mennyiségecske */
     //Mennyiség:
     String ris = "";    
     public MainConsole() {
         /* dísz sor kiírása */
-        System.out.println("╔═════════════════════════════════════════╗");
-        System.out.printf("║%17s%25s\n", "Projekt költsége", "║");
-        System.out.println("╚═════════════════════════════════════════╝");        
+        putHeader();
+     
         
         /* A bekérő: */
         Scanner csoni = new Scanner(System.in);        
@@ -49,5 +48,10 @@ System.out.println("────────────────────
   Koltseg k = new Koltseg(szal, ez, ris);
   Filehandler f = new Filehandler();
   f.i(k);
+    }
+    public void putHeader(){
+        System.out.println("╔═════════════════════════════════════════╗");
+        System.out.printf("║%17s%25s\n", "Projekt költsége", "║");
+        System.out.println("╚═════════════════════════════════════════╝");   
     }
 }
