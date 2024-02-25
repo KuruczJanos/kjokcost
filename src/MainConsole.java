@@ -15,19 +15,10 @@ public class MainConsole {
      * Ezzel valamit kezdünk.
      * Most jó lesz így.
      */
-    /* Szállítási költségecske tárolása a memóriában */
-    //szallitas
-    String szal = "";
-
-/* Most jön a nevecske */
-// A bekért név tárolása:
-    String ez = "";
-
-    /* Most jön a mennyiségecske */
-    //Mennyiség:
-    String ris = "";    
+    String transport = "";
+    String name = "";
+    String quantity = "";    
     public MainConsole() {
-        /* dísz sor kiírása */
         putHeader();
      
         
@@ -36,16 +27,16 @@ public class MainConsole {
 
 System.out.println("──────────────────────────────────────────");
 System.out.print("Szállítási költség: ");
-szal = csoni.nextLine();
+transport = csoni.nextLine();
 
 System.out.println("──────────────────────────────────────────");
 System.out.print("Üzleti költség: ");
-ez = csoni.nextLine();
+name = csoni.nextLine();
 
 System.out.println("──────────────────────────────────────────");
  System.out.print("Javítási költség: ");
-  ris = csoni.nextLine();        
-  Koltseg k = new Koltseg(szal, ez, ris);
+  quantity = csoni.nextLine();        
+  Koltseg k = new Koltseg(transport, name, quantity);
   Filehandler f = new Filehandler();
   f.i(k);
     }
