@@ -1,8 +1,8 @@
 /*
- * Sallai András, 2024-02-19
- * Copyright (c) 2024, Sallai András
+ * Kurucz János, 2024-02-26
+ * Copyright (c) 2024, Kurucz János
  * Licenc: MIT
- * Refakotárlás esetén jelölje meg, ki, mikor.
+ * Refakotárlva Kurucz János, 2024-02-26
  */
 
 import java.util.Scanner;
